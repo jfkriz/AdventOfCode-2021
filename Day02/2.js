@@ -1,17 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-
-try {
-    let fileName = path.resolve(__dirname, 'input.txt');
-    if(process.argv.length > 2) {
-        fileName = process.argv[2];
-    }
-    const data = fs.readFileSync(fileName, 'utf8');
-    processInput(data);
-} catch(e) {
-    console.error(e);
-}
-
 function processInput(data) {
     let horizontal = 0;
     let vertical = 0;
@@ -44,3 +30,5 @@ function processInput(data) {
 
     console.log(`Final Position: Horizontal ${horizontal}, Depth ${vertical}, Answer is ${horizontal * vertical}`);
 }
+
+module.exports = { processInput };
