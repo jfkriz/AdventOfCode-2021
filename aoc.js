@@ -1,9 +1,10 @@
+#!/usr/local/bin/node
 const fs = require('fs');
 const path = require('path');
 
 function main(args) {
     if (args.length < 2) {
-        console.warn(`Usage: node ${__filename} DayNumber ChallengeNumber [InputFileName]
+        console.warn(`Usage: node ${path.basename(__filename)} DayNumber ChallengeNumber [InputFileName]
         Where DayNumber is the day number, like "1" for Day01, and ChallengeNumber is the challenge number, typically "1" or "2".
         You can optionally specify an InputFileName (just the file name, it will look for the file in the Day directory), but it will default to a file named "input.txt" in the Day solution directory.`);
         process.exit(1);
