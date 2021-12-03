@@ -17,7 +17,7 @@ function main(args) {
     try {
         const inputFile = path.resolve(__dirname, day, args.length > 2 ? args[2] : 'input.txt');
 
-        const data = fs.readFileSync(inputFile, 'utf8');
+        const data = fs.readFileSync(inputFile, 'utf8').split('\n');
         processor.processInput(data);
     } catch (e) {
         console.error(e);

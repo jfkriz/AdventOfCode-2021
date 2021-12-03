@@ -1,7 +1,7 @@
 function processInput(data) {
     let previous = -1;
     let increased = -1;
-    data.split('\n').map(num => parseInt(num)).forEach(num => {
+    data.map(num => parseInt(num)).forEach(num => {
         if(num > previous) {
             increased++;
         }

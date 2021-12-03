@@ -35,7 +35,18 @@ Where DayNumber is the day number, like "1" for Day01, and ChallengeNumber is th
 
 For each new Day...
 - [ ] Create a DayNN directory
-- [ ] In the DayNN directory, create a 1.js for the first challenge
+- [ ] In the DayNN directory, create a 1.js for the first challenge. The file should contain at least a processInput function that is exported. You may add other functions as needed, but only the processInput, accepting an array of lines read from the input file, is required.
+```javascript
+function processInput(data) {
+    // data is an array of strings, representing each line in the input file, in the order read from the file
+
+    // iterate over data, doing whatever is needed to calculate the result, then write the result to the console, so it can be entered on the AoC page
+
+    console.log(`Puzzle Answer: ${result}`);
+}
+
+module.exports = { processInput };
+```
 - [ ] In the DayNN directory, create an input.txt file with the input for the challenge; optionally create a test-input.txt with the sample input, for easier testing
 - [ ] Since the second challenge builds on the first, copy the completed 1.js to 2.js, and modify for the second
 - [ ] Copy the source of the final HTML page after solving both challenges, and paste into [CodeBeautify](https://codebeautify.org/html-to-markdown) to get a markdown version of the page

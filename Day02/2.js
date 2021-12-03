@@ -2,7 +2,7 @@ function processInput(data) {
     let horizontal = 0;
     let vertical = 0;
     let aim = 0;
-    const input = data.split('\n').map(line => {
+    const input = data.map(line => {
         const pair = line.split(" ");
         return {
             "command": pair[0].toLowerCase(),
