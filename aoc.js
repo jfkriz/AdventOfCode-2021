@@ -1,5 +1,6 @@
 #!/usr/local/bin/node
 const fs = require('fs');
+const os = require('os');
 const path = require('path');
 
 function main(args) {
@@ -17,7 +18,7 @@ function main(args) {
     try {
         const inputFile = path.resolve(__dirname, day, args.length > 2 ? args[2] : 'input.txt');
 
-        const data = fs.readFileSync(inputFile, 'utf8').split('\n');
+        const data = fs.readFileSync(inputFile, 'utf8').split(os.EOL);
         processor.processInput(data);
     } catch (e) {
         console.error(e);
