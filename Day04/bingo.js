@@ -27,17 +27,13 @@ class Game {
     }
 
     playAll() {
-        for (let num of this.numbers) {
+        this.numbers.forEach(num => {
             this.lastNumberCalled = num;
-            for (let board of this.boards) {
-                if (!board.isWinner()) {
-                    board.markCalledNumber(num);
-                    if (board.isWinner()) {
-                        this.lastWinningBoard = board;
-                    }
-                }
-            }
-        }
+            this.boards.filter(board => !board.isWinner()).forEach(board => {
+                board.markCalledNumber(num);
+                this.lastWinningBoard = board.isWinner() ? board : this.lastWinningBoard;
+            })
+        });
 
         return this.lastWinningBoard;
     }
