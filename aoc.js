@@ -3,6 +3,9 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
+// Some helpful prototype extensions that I find myself writing over and over in each day's solutions
+require('./util/extensions');
+
 function main(args) {
     if (args.length < 2) {
         console.warn(`Usage: node ${path.basename(__filename)} DayNumber ChallengeNumber [InputFileName]
