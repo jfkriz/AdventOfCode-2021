@@ -1,5 +1,8 @@
+const puzzle = require('./puzzle');
+
 function processInput(data) {
-    let result = 42;
+    const solver = new puzzle.Solver(data);
+    let result = solver.solve();
     console.log(`Answer: ${result}`);
 }
 
